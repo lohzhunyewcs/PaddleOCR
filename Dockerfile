@@ -2,7 +2,9 @@ FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04
 ENV FORCE_CUDA="1"
 
 # FROM paddlepaddle/paddle:latest-dev-cuda10.2-cudnn7-gcc82
-FROM paddlepaddle/paddle:2.0.1-gpu-cuda10.2-cudnn7
+# FROM paddlepaddle/paddle:2.0.1-gpu-cuda10.2-cudnn7
+
+FROM _/python:3.8.8
 
 RUN pip3 install --upgrade pip
 
