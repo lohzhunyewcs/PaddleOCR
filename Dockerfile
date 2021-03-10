@@ -10,7 +10,7 @@ RUN  apt-get update -y && \
      apt-get -y autoremove && \
      apt-get clean
 
-ARG PYTHON_VERSION=3.8.8
+ARG PYTHON_VERSION=3.8
 
 RUN apt-get update && apt-get install -y --no-install-recommends --no-install-suggests \
           python${PYTHON_VERSION} \
