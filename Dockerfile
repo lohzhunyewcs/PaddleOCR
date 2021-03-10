@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04
+FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu16.04
 ENV FORCE_CUDA="1"
 
 # FROM paddlepaddle/paddle:latest-dev-cuda10.2-cudnn7-gcc82
