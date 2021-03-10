@@ -59,7 +59,7 @@ Metric:
 Train:
   dataset:
     name: LMDBDataSet
-    data_dir: ./data/lmdb_split/train_folder/
+    data_dir: data/lmdb_split/train_folder/
     transforms:
       - DecodeImage: # load image
           img_mode: BGR
@@ -84,7 +84,7 @@ Train:
 Eval:
   dataset:
     name: LMDBDataSet
-    data_dir: ./data/lmdb_split/test_folder/
+    data_dir: data/lmdb_split/test_folder/
     transforms:
       - DecodeImage: # load image
           img_mode: BGR
