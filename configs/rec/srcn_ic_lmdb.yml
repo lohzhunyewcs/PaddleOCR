@@ -104,4 +104,4 @@ Eval:
     shuffle: False
     drop_last: False
     batch_size_per_card: 32
-    num_workers: 4
+    num_workers: 0
