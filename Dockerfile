@@ -1,6 +1,6 @@
-FROM python:3.8.8
+# FROM python:3.8.8
 
-RUN pip3 install --upgrade pip
+# RUN pip3 install --upgrade pip
 FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu16.04
 ENV FORCE_CUDA="1"
 
@@ -10,9 +10,28 @@ RUN  apt-get update -y && \
      apt-get -y autoremove && \
      apt-get clean
 
-# FROM paddlepaddle/paddle:latest-dev-cuda10.2-cudnn7-gcc82
-# FROM paddlepaddle/paddle:2.0.1-gpu-cuda10.2-cudnn7
+ARG PYTHON_VERSION=3.8.8
 
+RUN apt-get update && apt-get install -y --no-install-recommends --no-install-suggests \
+          python${PYTHON_VERSION} \
+          python3-pip \
+          python${PYTHON_VERSION}-dev \
+# Change default python
+     && cd /usr/bin \
+     && ln -sf python${PYTHON_VERSION}         python3 \
+     && ln -sf python${PYTHON_VERSION}m        python3m \
+     && ln -sf python${PYTHON_VERSION}-config  python3-config \
+     && ln -sf python${PYTHON_VERSION}m-config python3m-config \
+     && ln -sf python3                         /usr/bin/python \
+# Update pip and add common packages
+     && python -m pip install --upgrade pip \
+     && python -m pip install --upgrade \
+          setuptools \
+          wheel \
+          six \
+# Cleanup
+     && apt-get clean \
+     && rm -rf $HOME/.cache/pip
 
 # # If you have cuda9 or cuda10 installed on your machine, please run the following command to install
 # # RUN python3 -m pip install paddlepaddle-gpu==2.0.0 -i https://mirror.baidu.com/pypi/simple
