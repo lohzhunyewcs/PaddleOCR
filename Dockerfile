@@ -124,4 +124,4 @@ COPY ./ ./
 
 RUN pip install -r requirements.txt
 
-ENTRYPOINT python3 -m paddle.distributed.launch --gpus '0,1'  tools/train.py -c configs/rec/srcn_ic.yml
+ENTRYPOINT python3 -m paddle.distributed.launch --gpus '0'  tools/train.py -c configs/rec/srcn_ic.yml
