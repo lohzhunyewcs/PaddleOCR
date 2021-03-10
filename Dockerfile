@@ -1,6 +1,12 @@
 FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu16.04
 ENV FORCE_CUDA="1"
 
+RUN  apt-get update -y && \
+     apt-get upgrade -y && \
+     apt-get dist-upgrade -y && \
+     apt-get -y autoremove && \
+     apt-get clean
+
 # FROM paddlepaddle/paddle:latest-dev-cuda10.2-cudnn7-gcc82
 # FROM paddlepaddle/paddle:2.0.1-gpu-cuda10.2-cudnn7
 
