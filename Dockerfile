@@ -19,7 +19,7 @@ COPY ./ ./
 
 RUN pip3 install -r requirements.txt
 
-ENTRYPOINT ['python3', '-m', 'paddle.distributed.launch', '--gpus', "'0,1'", '', 'tools/train.py', '-c', 'configs/rec/srcn_ic.yml']
+# ENTRYPOINT ['python3', '-m', 'paddle.distributed.launch', '--gpus', "'0,1'", '', 'tools/train.py', '-c', 'configs/rec/srcn_ic.yml']
 
 # # RUN apt-get update && apt-get upgrade
 # RUN curl -O https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh
