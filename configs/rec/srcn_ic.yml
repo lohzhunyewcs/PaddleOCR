@@ -60,7 +60,7 @@ Train:
   dataset:
     name: SimpleDataSet
     data_dir: .data/split/
-    label_file_list: train_gt.txt
+    label_file_list: ["./data/split/train_gt.txt"]
     transforms:
       - DecodeImage: # load image
           img_mode: BGR
@@ -86,7 +86,7 @@ Eval:
   dataset:
     name: SimpleDataSet
     data_dir: .data/split/
-    label_file_list: test_gt.txt
+    label_file_list: ["./data/split/test_gt.txt"]
     transforms:
       - DecodeImage: # load image
           img_mode: BGR
@@ -106,4 +106,4 @@ Eval:
     shuffle: False
     drop_last: False
     batch_size_per_card: 32
-    num_workers: 4
+    num_workers: 0

@@ -18,6 +18,8 @@ weights/*
 playground/*
 data/*
 output/*
+configs/*
+
 
 # model files
 *.xml
