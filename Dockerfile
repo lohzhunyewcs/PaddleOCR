@@ -1,6 +1,11 @@
 FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu16.04
 ENV FORCE_CUDA="1"
 
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update && \
+     apt-get -y install gcc mono-mcs && \
+     rm -rf /var/lib/apt/lists/*
+
 RUN  apt-get update -y && \
      apt-get upgrade -y && \
      apt-get dist-upgrade -y && \
