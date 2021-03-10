@@ -79,7 +79,7 @@ Train:
     shuffle: False
     batch_size_per_card: 64
     drop_last: False
-    num_workers: 4
+    num_workers: 0
 
 Eval:
   dataset:
